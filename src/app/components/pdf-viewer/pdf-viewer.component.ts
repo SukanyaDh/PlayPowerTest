@@ -47,6 +47,7 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
     try {
       this.pdfDoc = await this.pdfjsLib.getDocument(this.pdfSrc).promise;
       this.pageCount = this.pdfDoc.numPages;
+      this.pageNum=this.pageNumber
       this.renderPage(this.pageNumber);
     } catch (error) {
       console.error('Error loading PDF:', error);
@@ -77,6 +78,7 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
         canvasContext: ctx,
         viewport: viewport
       };
+      this.pageNum=this.pageNumber
 
       await page.render(renderContext).promise;
       this.pageRendering = false;

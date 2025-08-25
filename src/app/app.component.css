@@ -1,0 +1,80 @@
+
+  
+
+
+:host ::ng-deep .mat-grid-tile-content {
+    /* Your custom styles here */
+    justify-content: flex-start; /* Example: Align content to the left */
+    align-items: flex-start;     /* Example: Align content to the top */
+    padding: 16px !important;    /* Example: Add padding and use !important to override inline styles */
+    background-color: #f0f0f0;   /* Example: Change background color */
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+   /* padding:50px; */
+}
+
+
+
+.empty-space {
+    width: 50%; /* Adjust as needed */
+    background-color: #f9f9f9;
+}
+
+.header {
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #0056b3;
+}
+
+
+  
+  .progress-bar-container {
+    width: 200px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .progress-bar {
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    transition: width 0.3s ease;
+  }
+
+  .progress-container{
+    margin-top: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  
+
+  .btn-close{
+    float:right;
+    margin-right:10px;
+  }
+
+  .chatbot-ui {
+    width: 50%; /* Adjust as needed */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    height: 820px;
+}

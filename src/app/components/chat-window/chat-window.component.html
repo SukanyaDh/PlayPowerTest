@@ -1,15 +1,6 @@
+    <div class="chatbot-ui" *ngIf="pdfSrc">
 
-
-<!--Call to file upload component-->
-<app-file-upload (pdfUrlChange)="getPdfUrl($event)" *ngIf="!pdfUrl"></app-file-upload>
-
-<div class="container" *ngIf="pdfUrl && !isUploading">
-  <div class="chatbot-ui" >
-    <app-chat-window [pdfSrc]="pdfUrl" (clear)="clearChat()"></app-chat-window>
-  </div>
-  
-
-  <!-- <div class="chatbot-ui" >
+    
     <div class="example-flex-container">
       <button mat-raised-button aria-label="Example icon button with a menu icon" (click)="clearChat()">
         New Chat
@@ -17,7 +8,7 @@
     </div>
 
 
-      <div class="chat-window">
+      <div class="chat-window" *ngIf="pdfSrc">
         <div class="chat-box" *ngIf="isResponded==false">
           <span>
             <mat-icon>article</mat-icon>
@@ -66,15 +57,5 @@
         <input type="text" placeholder="Type a message..." [(ngModel)]="query">
         <button (click)="sendchat()">Send</button>
       </div>
-  </div> -->
-    
-
-   
-    <div class="empty-space" *ngIf="pdfUrl">
-      <app-pdf-viewer [pdfSrc]="pdfUrl" [pageNumber]="pageNumber"></app-pdf-viewer>
 
     </div>
-  </div>
-    
-     
-  

@@ -1,0 +1,8 @@
+<div class="pdf-container">
+    <div class="pdf-controls">
+      <button (click)="prevPage()" [disabled]="pageNum <= 1">Previous</button>
+      <span>Page {{ pageNum }} of {{ pageCount }}</span>
+      <button (click)="nextPage()" [disabled]="pageNum >= pageCount">Next</button>
+    </div>
+    <canvas #pdfCanvas class="pdf-canvas"></canvas>
+  </div>

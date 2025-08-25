@@ -1,0 +1,30 @@
+.drag-drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Class added by the directive on drag-over event */
+  .drag-drop-zone.drag-over {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+
+  .example-card {
+    max-width: 400px;
+    margin: 20px auto;
+    margin-top:200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border:none;
+}
+
+.progress-container{
+    margin-top: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }

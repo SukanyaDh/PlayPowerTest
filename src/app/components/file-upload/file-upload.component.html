@@ -1,0 +1,28 @@
+
+<div class="progress-container" *ngIf="isUploading">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  <p>Uploading...</p>
+</div>
+
+<mat-card class="example-card" appearance="outlined" *ngIf="!pdfUrl">
+  
+    <mat-card-content>
+          <div class="drag-drop-zone"
+          #dropZone
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onDrop($event)"
+          (click)="fileInput.click()">
+          <span class="material-symbols-outlined">
+            upload
+            </span>
+      <p>Upload PDF document and  start chatting</p>
+      <p>Click or drag and drop file here</p>
+  
+      </div>
+  
+      <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)" accept=".pdf">
+  
+      
+    </mat-card-content>
+  </mat-card>

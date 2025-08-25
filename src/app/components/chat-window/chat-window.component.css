@@ -1,0 +1,121 @@
+.example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+.chat-box, .pdf-box{
+    background-color:#F2F1F0;
+    margin-top:20px !important;
+}
+
+.chat-box {
+    align-items: start !important;
+    justify-content: left !important;
+
+    background-color: #E7DAF2;
+    padding:15px;
+    color:#AA64E8;
+      
+}
+.chat-box > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: #5D05A8;
+}
+
+
+.chat-window {
+    padding: 10px;
+    overflow-y: auto;
+    height:700px;
+}
+
+.input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.input-area button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #218838;
+}
+
+/* Chat window styles */
+.messages-container {
+    padding: 10px;
+    overflow: auto;
+    max-height: calc(100vh - 200px);
+    margin-bottom: 10px;
+  }
+  
+  .message {
+    margin-bottom: 15px;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    position: relative;
+    clear: both;
+  }
+  
+  .user-message {
+    background-color: #007bff;
+    color: white;
+    float: right;
+    margin-right: 10px;
+    border-bottom-right-radius: 0;
+  }
+  
+  .bot-message {
+    background-color: #f1f1f1;
+    float: left;
+    margin-left: 10px;
+    border-bottom-left-radius: 0;
+  }
+  
+  .message-time {
+    font-size: 0.7em;
+    opacity: 0.8;
+    margin-top: 4px;
+    text-align: right;
+  }
+  
+  /* Typing indicator */
+  .typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: #666;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    animation: bounce 1.5s infinite ease-in-out;
+  }
+  
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+  }

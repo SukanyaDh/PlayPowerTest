@@ -27,7 +27,7 @@
 .chat-window {
     padding: 10px;
     overflow-y: auto;
-    height:700px;
+    /* height:700px; */
 }
 
 .input-area {

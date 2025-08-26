@@ -13,7 +13,6 @@ interface Message {
   content: string;
   isUser: boolean;
   timestamp: Date;
-  citation: string;
   pageNumber:string;
 }
 
@@ -80,7 +79,6 @@ export class ChatWindowComponent {
       content: this.query,
       isUser: true,
       timestamp: new Date(),
-      citation:'',
       pageNumber:''
     });
     this.scrollToBottom();
@@ -93,12 +91,11 @@ export class ChatWindowComponent {
   this.apiService.chat(queryData).subscribe((response) => {
     console.log('File uploaded successfully:', response);
     this.markdownText= response.answer || 'No response from server';
-    const citation=response.citations[0]['content_preview'];
+    //const citation=response.citations[0]['content_preview'];
     this.messages.push({
       content: response.answer || 'No response from server', // Adjust based on your API response structure
       isUser: false,
       timestamp: new Date(),
-      citation: citation,
       pageNumber: response.citations[0]['page_number']
     });
     this.isLoading = false;

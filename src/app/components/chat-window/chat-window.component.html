@@ -32,7 +32,6 @@
              class="message">
           <div class="message-content">
             <markdown *ngIf="!message.isUser" [data]="message.content"></markdown>
-            <markdown *ngIf="!message.isUser" [data]="message.citation"></markdown>
             <mat-chip *ngIf="!message.isUser" 
               color="primary"
               style="cursor: pointer;"

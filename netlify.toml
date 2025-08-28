@@ -1,0 +1,6 @@
+[build]
+command = "npm install --force && ng build"
+publish = "dist/assessment" # Change 'your-project-name' to your project's name
+
+[build.environment]
+NPM_FLAGS = "--force"

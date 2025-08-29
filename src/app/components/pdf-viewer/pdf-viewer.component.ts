@@ -31,6 +31,8 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
       this.pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.54/build/pdf.worker.mjs`;
 
       this.loadPdf();
+
+      console.log(this.pageNum)
     }
   }
 
@@ -78,6 +80,8 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
         canvasContext: ctx,
         viewport: viewport
       };
+      this.pageNumber=num
+      console.log(this.pageNumber)
       this.pageNum=this.pageNumber
 
       await page.render(renderContext).promise;
@@ -96,19 +100,26 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
     if (this.pageNum >= this.pageCount) {
       return;
     }
+
     this.pageNum++;
+    this.pageNumber=this.pageNum
+
     this.queueRenderPage(this.pageNum);
   }
 
   prevPage(): void {
+    console.log(this.pageNum)
     if (this.pageNum <= 1) {
       return;
     }
     this.pageNum--;
+    this.pageNumber=this.pageNum
+
     this.queueRenderPage(this.pageNum);
   }
 
   queueRenderPage(num: number): void {
+
     if (this.pageRendering) {
       this.pageNumPending = num;
     } else {

@@ -8,72 +8,10 @@
     <app-chat-window [pdfSrc]="pdfUrl" (clear)="clearChat()"></app-chat-window>
   </div>
   
-
-  <!-- <div class="chatbot-ui" >
-    <div class="example-flex-container">
-      <button mat-raised-button aria-label="Example icon button with a menu icon" (click)="clearChat()">
-        New Chat
-      </button>
-    </div>
-
-
-      <div class="chat-window">
-        <div class="chat-box" *ngIf="isResponded==false">
-          <span>
-            <mat-icon>article</mat-icon>
-    
-            Your Document is ready</span>
-          <p>You can now ask questions regarding the document. For example:</p>
-          <ul>
-            <li>What is the main topic of this document?</li>
-            <li>Can you summarise the key points?</li>
-            <li>What are the conclusions or recommendations?</li>
-            
-          </ul>
-        </div>
-        
-      </div>
-
-      <div class="messages-container" #scrollMe>
-        <div *ngFor="let message of messages" 
-             [class.user-message]="message.isUser" 
-             [class.bot-message]="!message.isUser"
-             class="message">
-          <div class="message-content">
-            <markdown *ngIf="!message.isUser" [data]="message.content"></markdown>
-            <markdown *ngIf="!message.isUser" [data]="message.citation"></markdown>
-            <mat-chip *ngIf="!message.isUser" 
-              color="primary"
-              style="cursor: pointer;"
-            (click)="goToPage(message.pageNumber)">Page Number: {{message.pageNumber}}
-            <mat-icon style="font-size: 16px; height: 16px; width: 16px; line-height: 16px;">arrow_forward</mat-icon>
-          </mat-chip>
-
-            <p *ngIf="message.isUser">{{ message.content }}</p>
-          </div>
-          <div class="message-time">
-            {{ message.timestamp | date:'shortTime' }}
-          </div>
-        </div>
-        <div *ngIf="isLoading" class="message bot-message">
-          <div class="message-content typing-indicator">
-            <span></span><span></span><span></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="input-area">
-        <input type="text" placeholder="Type a message..." [(ngModel)]="query">
-        <button (click)="sendchat()">Send</button>
-      </div>
-  </div> -->
-    
-
    
-    <div class="empty-space" *ngIf="pdfUrl">
-      <app-pdf-viewer [pdfSrc]="pdfUrl" [pageNumber]="pageNumber"></app-pdf-viewer>
-
-    </div>
+  <div class="empty-space" *ngIf="pdfUrl">
+    <app-pdf-viewer [pdfSrc]="pdfUrl" [pageNumber]="pageNumber"></app-pdf-viewer>
+  </div>
   </div>
     
      

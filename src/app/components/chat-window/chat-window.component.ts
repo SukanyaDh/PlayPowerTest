@@ -88,21 +88,40 @@ export class ChatWindowComponent {
     this.isLoading = true;
     this.query='';
   
-  this.apiService.chat(queryData).subscribe((response) => {
-    console.log('File uploaded successfully:', response);
-    this.markdownText= response.answer || 'No response from server';
-    //const citation=response.citations[0]['content_preview'];
-    this.messages.push({
-      content: response.answer || 'No response from server', // Adjust based on your API response structure
-      isUser: false,
-      timestamp: new Date(),
-      pageNumber: response.citations[0]['page_number']
+    this.apiService.chat(queryData).subscribe({
+      next: (response) => {
+        console.log('File uploaded successfully:', response);
+        this.markdownText = response.answer || 'No response from server';
+        this.messages.push({
+          content: response.answer || 'No response from server',
+          isUser: false,
+          timestamp: new Date(),
+          pageNumber: response.citations[0]['page_number']
+        });
+        this.isLoading = false;
+        this.isResponded = true;
+        this.scrollToBottom();
+      },
+      error: (error) => {
+        console.error('API Error:', error);
+        this.isLoading = false; // Stop loading
+        this.isResponded = false; // Indicate that there was no successful response
+        // Display a user-friendly error message, e.g., in a toast or alert
+        this.markdownText = 'Failed to get a response from the server. Please try again later.';
+        // Or you can push a message to the chat
+        this.messages.push({
+          content: 'I\'m sorry, but something went wrong. Please try again.',
+          isUser: false,
+          timestamp: new Date(),
+          pageNumber:''
+        });
+      },
+      complete: () => {
+        // Optional: This part runs when the observable completes
+        console.log('API call completed.');
+      }
     });
-    this.isLoading = false;
-
-    this.isResponded = true;
-    this.scrollToBottom();
-  });
+    
   this.scrollToBottom()
 
   }

@@ -39,7 +39,6 @@ export class AppComponent  {
     {}
 
     ngOnInit(): void {
-      console.log('AppComponent: Subscribing to page number changes');
       this.subscription = this.helperService.currentData.subscribe({
         next: (pageNumber) => {
           console.log('AppComponent: Received new page number:', pageNumber);

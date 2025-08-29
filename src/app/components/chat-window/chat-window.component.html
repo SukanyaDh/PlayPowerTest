@@ -32,7 +32,7 @@
              class="message">
           <div class="message-content">
             <markdown *ngIf="!message.isUser" [data]="message.content"></markdown>
-            <mat-chip *ngIf="!message.isUser" 
+            <mat-chip *ngIf="!message.isUser && message.pageNumber" 
               color="primary"
               style="cursor: pointer;"
             (click)="goToPage(message.pageNumber)">Page Number: {{message.pageNumber}}
